@@ -7,7 +7,7 @@ const tokyoData = require("./data/datas.json");
 app.use(cors());
 
 app.get("/api/tokyo", (req, res) => {
-  res.send(tokyoData);
+  res.json(tokyoData);
 });
 
 app.listen(port, () => {

@@ -13,7 +13,7 @@ function App() {
 
   const fetchData = () => {
     axios.get("http://localhost:3003/api/tokyo").then((response) => {
-      setTyo(response.data);
+      setTyo(response.data.tokyo);
     });
   };
 
@@ -21,12 +21,14 @@ function App() {
     fetchData();
   }, []);
 
+  console.log(tyo);
+
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/soccer" element={<SoccerData />} />
-        <Route path="/photograph" element={<Photograph />} tyo={tyo} />
+        <Route path="/photograph" element={<Photograph tyo={tyo} />} />
         <Route path="/3d" element={<ThreeD />} />
         <Route path="/music" element={<Music />} />
       </Routes>
