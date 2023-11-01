@@ -1,8 +1,13 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Photograph = () => {
+const Photograph = ({ tyo }) => {
+  console.log({ tyo })
   return (
-    <div>Photograph</div>
+    <div>
+      hihi
+    </div>
   )
 }
 
