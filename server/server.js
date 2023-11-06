@@ -1,13 +1,16 @@
 const express = require("express");
+
 const app = express();
+
 const port = 3003;
-const cors = require("cors");
-const tokyoData = require("./data/tokyo.json");
+
 const path = require("path");
 
-app.use(cors());
+const cors = require("cors");
 
-// app.use("/assets", express.static("assets"));
+const tokyoData = require("./data/tokyo.json");
+
+app.use(cors());
 
 const assetsPath = path.join(__dirname, "assets");
 app.use("/assets", express.static(assetsPath));
